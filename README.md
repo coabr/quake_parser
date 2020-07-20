@@ -48,5 +48,5 @@ Construir uma API com qualquer Linguagem que busque o resultado do Game por ID.
 
 1. O exercício poderá ser feito em qualquer linguagem, mas você deverá utilizar os conceitos de POO.
 2. Use git e tente fazer commits pequenos e bem descritos.
-3. Faça pelo menos um README explicando como fazer o setup, uma explicação da solução proposta, o mínimo de documentação para outro desenvolvedor entender seu código
+3. Faça pelo menos um README explicando como fazer o setup, uma explicação da solução proposta
 4. Siga o que considera boas práticas de programação, coisas que um bom desenvolvedor olhe no seu código e não ache "feio" ou "ruim".
