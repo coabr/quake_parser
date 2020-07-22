@@ -2,6 +2,7 @@
 
 - [x] Fork the repository;
 - [x] Create local folder;
+- [x] Detach fork;
  
  ## Task 1
 - [x] Read the file games.log;
