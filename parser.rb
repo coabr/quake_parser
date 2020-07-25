@@ -1,4 +1,2 @@
-file = File.read("games.log")
+puts File.readlines("games.log")
 
-#Print to check if its reading the file
-#puts file
