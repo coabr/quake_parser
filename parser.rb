@@ -1,15 +1,16 @@
 require_relative 'game.rb'
 
-INITGAME_TOKEN = "InitGame"
-CLIENTUSERINFOCHANGED_TOKEN = "ClientUserinfoChanged"
+# To avoid some issues, we should put those values in constants for ease/better visualization
+GAMESTART_TOKEN = "InitGame"
+PLAYERINFO_TOKEN = "ClientUserinfoChanged"
 KILL_TOKEN = "Kill"
 GAMESLOG_TOKEN = "games.log"
 
 
 #separate games
 file = File.read(GAMESLOG_TOKEN) # this will retun a string
-arr_of_games = file.split(INITGAME_TOKEN)
-#puts file
+arr_of_games = file.split(GAMESTART_TOKEN)
+#puts file 
 game_number = 0
 
 #separate each game by lines
@@ -18,7 +19,7 @@ arr_of_games.each do |game_string|
     game_number += 1
     game = Game.new(game_number) # initialize an object of the class
     game_lines.each do |line|
-        if line.match?(CLIENTUSERINFOCHANGED_TOKEN) 
+        if line.match?(PLAYERINFO_TOKEN) 
             arr_of_user_line = line.split("\\")
             game.players << arr_of_user_line[1]
             # puts game.players #test to check if its getting the players name
