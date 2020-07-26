@@ -35,7 +35,7 @@ arr_of_games.each do |game_string|
             game.kill(killer,killed)
         end
     end
-    puts game.summary
+    puts "game_#{game.number}: #{game.summary}"
 end
 
 
