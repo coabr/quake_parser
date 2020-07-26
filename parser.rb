@@ -7,11 +7,12 @@ KILL_TOKEN = "Kill"
 GAMESLOG_TOKEN = "games.log"
 
 
-#separate games
+# Separate games
 file = File.read(GAMESLOG_TOKEN) # this will retun a string
-arr_of_games = file.split(GAMESTART_TOKEN)
-#puts file 
-game_number = 0
+arr_of_games = file.split(GAMESTART_TOKEN) #this will return an array of strings, and every item of the array (wich is a string) will start when "InitGame" occurs
+#puts file -> to check if its reading correctly
+
+game_number = 0 # before the game start, the game number is equal to zero 
 
 #separate each game by lines
 arr_of_games.each do |game_string|
@@ -19,16 +20,16 @@ arr_of_games.each do |game_string|
     game_number += 1
     game = Game.new(game_number) # initialize an object of the class
     game_lines.each do |line|
+        #puts game.number -> to check if its getting the game number
         if line.match?(PLAYERINFO_TOKEN) 
-            arr_of_user_line = line.split("\\")
-            game.players << arr_of_user_line[1]
-            # puts game.players #test to check if its getting the players name
-            puts game.number #test to check if its getting the game number
+            arr_with_user_name = line.split("\\")
+            game.players << arr_with_user_name[1]
+            # puts game.players -> to check if its getting the players name
         elsif line.match?(KILL_TOKEN)
-            arr_of_kill = line.split(" ")
-            killer = arr_of_kill[5]
-            #puts ("this game killer is #{killer}")
-            killed = arr_of_kill[7]
+            arr_with_kill = line.split(" ")
+            killer = arr_with_kill[5]
+            #puts ("this is game #{game_number} and the killer is #{killer}")
+            killed = arr_with_kill[7]
             #puts ("this game killed is #{killed}")
             game.kill(killer,killed)
         end
