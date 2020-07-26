@@ -1,4 +1,5 @@
 require_relative 'game.rb'
+require 'json'
 
 # To avoid some issues, we should put those values in constants for ease/better visualization
 GAMESTART_TOKEN = "InitGame"
@@ -35,7 +36,7 @@ arr_of_games.each do |game_string|
             game.kill(killer,killed)
         end
     end
-    puts "game_#{game.number}: #{game.summary}"
+    puts "game_#{game.number.to_json}: #{game.summary.to_json}"
 end
 
 
