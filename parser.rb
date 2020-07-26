@@ -25,6 +25,7 @@ arr_of_games.each do |game_string|
             arr_with_user_name = line.split("\\")
             game.players << arr_with_user_name[1]
             # puts game.players -> to check if its getting the players name
+            game.players.uniq!
         elsif line.match?(KILL_TOKEN)
             arr_with_kill = line.split(" ")
             killer = arr_with_kill[5]
@@ -34,6 +35,7 @@ arr_of_games.each do |game_string|
             game.kill(killer,killed)
         end
     end
+    puts game.summary
 end
 
 

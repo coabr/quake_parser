@@ -18,6 +18,6 @@ class Game
         kills_without_world = kills.dup #need to duplicate to use ahead in the total kills
         kills_without_world.delete("<world>") #removes all occurencies of "<world>" from kills hash
         total_kills = kills_without_world.values.sum # returns the total number of kills in a game
-        {total_kills: total_kills, players: @players, kills: @kills} #to summarize the game hash
+        {total_kills: total_kills, players: @players, kills: kills_without_world} #to summarize the game hash
     end
 end
