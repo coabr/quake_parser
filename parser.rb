@@ -26,11 +26,10 @@ arr_of_games.each do |game_string|
         elsif line.match?(KILL_TOKEN)
             arr_of_kill = line.split(" ")
             killer = arr_of_kill[5]
-            puts ("this game killer is #{killer}")
+            #puts ("this game killer is #{killer}")
             killed = arr_of_kill[7]
-            puts ("this game killed is #{killed}")
+            #puts ("this game killed is #{killed}")
             game.kill(killer,killed)
-            
         end
     end
 end
