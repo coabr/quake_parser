@@ -10,7 +10,8 @@ class Game
 
     # use methods to give you the answers you need
     def kill (killer, killed)
-        
+        @kills[killed] -= 1 if killer == "<world>"
+        @kills[killer] += 1
     end
 
     def summary # a method to include the rules about world and kills
