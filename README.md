@@ -10,7 +10,7 @@ $ ruby server.rb
 ```
 Abra o seu servidor favorito no localhost:4567, e digite o id desejado para ver o retorno do game, conforme gif abaixo:
 
-![quake_parser]()
+![quake_parser](https://github.com/COAB1/quake_parser/blob/master/quake_parser.gif)
 
 Página do meu Projeto Final.
 
