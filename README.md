@@ -1,52 +1,36 @@
 # Quake Parser
 
-## Task 1
+## Como fazer o setup
 
-Construa um parser para o arquivo de log games.log.
+``` 
+$ git clone https://github.com/COAB1/quake_parser.git
+$ cd quake_parser
+$ gem install sinatra
+$ ruby server.rb
+```
+Abra o seu servidor favorito no localhost:4567, e digite o id desejado para ver o retorno do game, conforme gif abaixo:
 
-O arquivo `games.log` é gerado pelo servidor de quake 3 arena. Ele registra todas as informações dos jogos, quando um jogo começa, quando termina, quem matou quem, quem morreu pq caiu no vazio, quem morreu machucado, entre outros.
+![quake_parser]()
 
-O parser deve ser capaz de ler o arquivo, agrupar os dados de cada jogo, e em cada jogo deve coletar as informações de morte.
+Página do meu Projeto Final.
 
-### Exemplo
+## Explicação da solução proposta
 
-  	21:42 Kill: 1022 2 22: <world> killed Isgalamido by MOD_TRIGGER_HURT
-  
-  O player "Isgalamido" morreu pois estava ferido e caiu de uma altura que o matou.
+	Este problema foi resolvido utilizando a linguagem ruby. A tentativa foi quebrar o problema em diversas partes e ir resolvendo passo a passo, como pode ser visto pelos commits.
+	Passo a passo do que foi feito:
+	- Li o arquivo;
+	- Separei os jogos pela palavra chave 'InitGame';
+	- Criei uma classe Game, para identificar o objeto Game e seus métodos;
+	- Identifiquei o nome de cada jogador por jogo, como havia mudança de jogador durante o jogo, utilizei a palavra chave 'ClientUserinfoChanged';
+	- Identifiquei cada morte por jogo;
+	- Criei um método para identificar os que mataram (killer) e  os que morreram (killed);
+	- Adicionei as regras do exercício sobre as mortes causada pelo <world> e removi o <world> da lista de players;
+	- Contabilizei o total de mortes por jogo;
+	- Associei as Kiils aos Players;
+	- Tornei os players únicos por array;
+	- Incluí o número do game para impressão de JSON, como pedido na Task 2;
+	- Criei os arquivos para a API e coloquei os scripts do arquivo parser.rb dentro de uma função, e incluí dentro da função o array para receber todos os games;
+	- Configurei a requisição na API e converti para cantent_type :json para uma melhor visualização;
+	- Intalei a gem do sinatra e subi a aplicação para o servidor no localhost:4567;
 
-  	2:22 Kill: 3 2 10: Isgalamido killed Dono da Bola by MOD_RAILGUN
-  
-  O player "Isgalamido" matou o player Dono da Bola usando a arma Railgun.
-  
-Para cada jogo o parser deve gerar algo como:
-
-    game_1: {
-	    total_kills: 45;
-	    players: ["Dono da bola", "Isgalamido", "Zeh"]
-	    kills: {
-	      "Dono da bola": 5,
-	      "Isgalamido": 18,
-	      "Zeh": 20
-	    }
-	  }
-
-### Observações
-
-1. Quando o `<world>` mata o player ele perde -1 kill.
-2. `<world>` não é um player e não deve aparecer na lista de players e nem no dicionário de kills.
-3. `total_kills` são os kills dos games, isso inclui mortes do `<world>`.
-
-## Task 2
-
-Após construir o parser construa um script que imprima um relatório de cada jogo (simplemente imprimindo o hash) e um ranking geral de kills por jogador.
-
-## Task 3
-
-Construir uma API com qualquer Linguagem que busque o resultado do Game por ID.
-
-# Requisitos
-
-1. O exercício poderá ser feito em qualquer linguagem, mas você deverá utilizar os conceitos de POO.
-2. Use git e tente fazer commits pequenos e bem descritos.
-3. Faça pelo menos um README explicando como fazer o setup, uma explicação da solução proposta
-4. Siga o que considera boas práticas de programação, coisas que um bom desenvolvedor olhe no seu código e não ache "feio" ou "ruim".
+	Todos os arquivos do código contém comentários para melhor entendimento de outros desenvolvedores.
