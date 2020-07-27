@@ -31,7 +31,7 @@ Este problema foi resolvido utilizando a linguagem ruby. A tentativa foi quebrar
 	- Tornei os players únicos por array;
 	- Incluí o número do game para impressão de JSON, como pedido na Task 2;
 	- Criei os arquivos para a API e coloquei os scripts do arquivo parser.rb dentro de uma função, e incluí dentro da função o array para receber todos os games;
-	- Configurei a requisição na API e converti para cantent_type :json para uma melhor visualização;
-	- Intalei a gem do sinatra e subi a aplicação para o servidor no localhost:4567;
+	- Configurei a requisição na API e converti para content_type :json para uma melhor visualização;
+	- Instalei a gem do sinatra e subi a aplicação para o servidor no localhost:4567;
 
 Todos os arquivos do código contém comentários para melhor entendimento de outros desenvolvedores.
