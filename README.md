@@ -16,7 +16,8 @@ Página do meu Projeto Final.
 
 ## Explicação da solução proposta
 
-	Este problema foi resolvido utilizando a linguagem ruby. A tentativa foi quebrar o problema em diversas partes e ir resolvendo passo a passo, como pode ser visto pelos commits.
+Este problema foi resolvido utilizando a linguagem ruby. A tentativa foi quebrar o problema em diversas partes e ir resolvendo passo a passo, como pode ser visto pelos commits.
+
 	Passo a passo do que foi feito:
 	- Li o arquivo;
 	- Separei os jogos pela palavra chave 'InitGame';
@@ -33,4 +34,4 @@ Página do meu Projeto Final.
 	- Configurei a requisição na API e converti para cantent_type :json para uma melhor visualização;
 	- Intalei a gem do sinatra e subi a aplicação para o servidor no localhost:4567;
 
-	Todos os arquivos do código contém comentários para melhor entendimento de outros desenvolvedores.
+Todos os arquivos do código contém comentários para melhor entendimento de outros desenvolvedores.
